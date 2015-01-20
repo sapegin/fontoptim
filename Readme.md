@@ -56,7 +56,7 @@ See `demo` folder for details.
 
 ### Grunt
 
-...
+* [grunt-fontoptim](https://github.com/sapegin/grunt-fontoptim)
 
 
 ## Resources
