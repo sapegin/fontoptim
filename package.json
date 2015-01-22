@@ -1,7 +1,7 @@
 {
   "name": "fontoptim",
   "description": "Generates CSS with WOFF(2) fonts embedded as Base64",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "homepage": "https://github.com/sapegin/fontoptim",
   "author": {
     "name": "Artem Sapegin",
