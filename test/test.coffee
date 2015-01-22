@@ -67,7 +67,7 @@ describe 'FontOptim class', ->
 	it 'getFontUri', (done) ->
 		fo = new FontOptim({}, options)
 		uri = fo.getFontUri('woff2', 'Hello world')
-		expect(uri).to.equals('data:application/x-font-woff2;charset=utf-8;base64,SGVsbG8gd29ybGQ=')
+		expect(uri).to.equals('data:application/font-woff2;charset=utf-8;base64,SGVsbG8gd29ybGQ=')
 		done()
 
 	it 'getFontFace', (done) ->
@@ -76,7 +76,7 @@ describe 'FontOptim class', ->
 		expect(fontface).to.equals([
 			'@font-face{'
 				'font-family:"PT Serif";'
-				'src:url(data:application/x-font-woff2;charset=utf-8;base64,SGVsbG8gd29ybGQ=) format("woff2");'
+				'src:url(data:application/font-woff2;charset=utf-8;base64,SGVsbG8gd29ybGQ=) format("woff2");'
 				'font-weight:600;'
 				'font-style:normal'
 			'}'

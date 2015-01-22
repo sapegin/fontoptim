@@ -18,7 +18,7 @@ function loadFont(fontName, fontUrlBase) {
 	catch (ex) {
 	}
 
-	var localStoragePrefix = 'x-font-' + fontName;
+	var localStoragePrefix = 'font-' + fontName;
 	var localStorageUrlKey = localStoragePrefix + 'url';
 	var localStorageCssKey = localStoragePrefix + 'css';
 	var storedFontUrlBase = loSto[localStorageUrlKey];
@@ -34,7 +34,7 @@ function loadFont(fontName, fontUrlBase) {
 	// 3. Checking whether the font data is already in localStorage and up-to-date
 	if (storedFontCss && storedFontUrlBase === fontUrlBase) {
 		// the css is still in the localStorage AND it was loaded from one of the current URLs
-		
+
 		// 4. Applying the font style sheet
 		styleElement.textContent = storedFontCss;
 	}

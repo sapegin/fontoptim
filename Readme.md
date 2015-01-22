@@ -27,8 +27,8 @@ var fonts = {
 	// ...
 };
 var css = fontoptim(fonts, {fontFamily: 'PT Serif'});
-// css.woff = '@font-face{font-family:"PT Serif";src:url(data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAU...'
-// css.woff2 = '@font-face{font-family:"PT Serif";src:url(data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAA...'
+// css.woff = '@font-face{font-family:"PT Serif";src:url(data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAAU...'
+// css.woff2 = '@font-face{font-family:"PT Serif";src:url(data:application/font-woff2;charset=utf-8;base64,d09GMgABAAAAA...'
 fs.writeFileSync('build/ptserif.woff.css', css.woff);
 fs.writeFileSync('build/ptserif.woff2.css', css.woff2);
 ```
