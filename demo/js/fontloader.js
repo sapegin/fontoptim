@@ -1,6 +1,10 @@
 // Based on http://bdadam.com/blog/better-webfont-loading-with-localstorage-and-woff2.html
 // This script must be placed in the HEAD above all external stylesheet declarations (link[rel=stylesheet])
+/*jshint unused:false*/
+/*global FontFace:false*/
 function loadFont(fontName, fontUrlBase) {
+	'use strict';
+
 	// 0. Many unsupported browsers should stop here
 	var ua = navigator.userAgent;
 	var noSupport = !window.addEventListener ||  // IE8 and below
