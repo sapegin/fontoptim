@@ -5,7 +5,7 @@
 	<title>fontoptim example</title>
 
 	<!-- This script must be placed in the HEAD above all external stylesheet declarations (link[rel=stylesheet]) -->
-	<script>function loadFont(a,b){function c(){if(!window.FontFace)return!1;var a=new FontFace("t",'url("data:application/font-woff2,") format("woff2")',{});return a.load(),"loading"===a.status}var d=navigator.userAgent,e=!window.addEventListener||d.match(/(Android (2|3|4.0|4.1|4.2|4.3))|(Opera (Mini|Mobi))/)&&!d.match(/Chrome/);if(!e){var f={};try{f=localStorage||{}}catch(g){}var h="font-"+a,i=h+"url",j=h+"css",k=f[i],l=f[j],m=document.createElement("style");if(m.rel="stylesheet",document.head.appendChild(m),l&&k===b)m.textContent=l;else{var n=b+".woff"+(c()?"2":"")+".css",o=new XMLHttpRequest;o.open("GET",n),o.onload=function(){o.status>=200&&o.status<400&&(f[i]=b,f[j]=m.textContent=o.responseText)},o.send()}}}
+	<script>function loadFont(a,b){function c(){if(!window.FontFace)return!1;var a=new FontFace("t",'url("data:font/woff2,") format("woff2")',{});return a.load(),"loading"===a.status}var d=navigator.userAgent,e=!window.addEventListener||d.match(/(Android (2|3|4.0|4.1|4.2|4.3))|(Opera (Mini|Mobi))/)&&!d.match(/Chrome/);if(!e){var f={};try{f=localStorage||{}}catch(g){}var h="font-"+a,i=h+"url",j=h+"css",k=f[i],l=f[j],m=document.createElement("style");if(m.rel="stylesheet",document.head.appendChild(m),l&&k===b)m.textContent=l;else{var n=b+".woff"+(c()?"2":"")+".css",o=new XMLHttpRequest;o.open("GET",n),o.onload=function(){o.status>=200&&o.status<400&&(f[i]=b,f[j]=m.textContent=o.responseText)},o.send()}}}
 	loadFont('PT Serif','build/ptserif')</script>
 
 	<style>

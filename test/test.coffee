@@ -64,19 +64,38 @@ describe 'FontOptim class', ->
 		expect(base64).to.equals('SGVsbG8gd29ybGQ=')
 		done()
 
+	it 'getMimeType', (done) ->
+		fo = new FontOptim({}, options)
+		woffMime = fo.getMimeType('woff')
+		woff2Mime = fo.getMimeType('woff2')
+		expect(woffMime).to.equals('application/font-woff')
+		expect(woff2Mime).to.equals('font/woff2')
+		done()
+
 	it 'getFontUri', (done) ->
 		fo = new FontOptim({}, options)
-		uri = fo.getFontUri('woff2', 'Hello world')
-		expect(uri).to.equals('data:application/font-woff2;charset=utf-8;base64,SGVsbG8gd29ybGQ=')
+		woffUri = fo.getFontUri('woff', 'Hello world')
+		woff2Uri = fo.getFontUri('woff2', 'Hello world')
+		expect(woffUri).to.equals('data:application/font-woff;charset=utf-8;base64,SGVsbG8gd29ybGQ=')
+		expect(woff2Uri).to.equals('data:font/woff2;charset=utf-8;base64,SGVsbG8gd29ybGQ=')
 		done()
 
 	it 'getFontFace', (done) ->
 		fo = new FontOptim({}, options)
-		fontface = fo.getFontFace('PTSerif-Bold.woff2', 'woff2', 'Hello world')
-		expect(fontface).to.equals([
+		woffFontFace = fo.getFontFace('PTSerif-Bold.woff', 'woff', 'Hello world')
+		woff2FontFace = fo.getFontFace('PTSerif-Bold.woff2', 'woff2', 'Hello world')
+		expect(woffFontFace).to.equals([
 			'@font-face{'
 				'font-family:"PT Serif";'
-				'src:url(data:application/font-woff2;charset=utf-8;base64,SGVsbG8gd29ybGQ=) format("woff2");'
+				'src:url(data:application/font-woff;charset=utf-8;base64,SGVsbG8gd29ybGQ=) format("woff");'
+				'font-weight:600;'
+				'font-style:normal'
+			'}'
+		].join(''))
+		expect(woff2FontFace).to.equals([
+			'@font-face{'
+				'font-family:"PT Serif";'
+				'src:url(data:font/woff2;charset=utf-8;base64,SGVsbG8gd29ybGQ=) format("woff2");'
 				'font-weight:600;'
 				'font-style:normal'
 			'}'
